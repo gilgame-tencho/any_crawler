@@ -2,44 +2,29 @@ const https = require('https');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
-// const date_util = require('date-utils');
 require('date-utils');
 const conf_file = path.join(__dirname, 'conf', 'conf.yml');
 const conf = yaml.load(fs.readFileSync(conf_file), 'utf-8');
 const log_dir = path.join(__dirname, 'data');
 
-const Base = conf.base.base;
-const __Base = conf.base._base;
-const rai = conf.base.rai;
-const login_url = conf.base.login;
-
 let d1 = new Date(Date.UTC(2022, 0, 1));
 let d1_last = new Date(Date.UTC(2023, 0, 1));
-console.log(d1.toFormat("YYYY-MM-DD"));
-console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
+// console.log(d1.toFormat("YYYY-MM-DD"));
 // console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 25}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 333}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
-// console.log(d1.add({"days": 1}).toFormat("YYYY-MM-DD"));
-
-// console.log(d1_last.toFormat("YYYY-MM-DD"));
-
-console.log(Date.compare(d1, d1_last));
+// console.log(Date.compare(d1, d1_last));
 
 const param = {
   children : conf.children,
   classid : conf.classid,
 };
 
-// #####################################################
+// ###  common ##################################################
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
+
+// ###  main   ##################################################
 
 var request = require('request');
 
@@ -48,10 +33,10 @@ var headers = {
   'cookie':conf.cookie,
 }
 
+// craw param
 let day = new Date(Date.UTC(2023, 3 - 1, 20));
-// let end_day = new Date(Date.UTC(2020, 4 - 1, 1));
-
 let max = 12;
+
 for(let i=0; i<max; i++){
     setTimeout(() => {
         let child = 'hii';
