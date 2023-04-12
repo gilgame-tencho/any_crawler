@@ -1,0 +1,29 @@
+login:
+  id: 'hogehoge@mail.com'
+  pass: 'password'
+
+cookie: 'sample_login_session_id=hogehoge'
+
+base:
+  url_base: 'https://www.sample.url.jp/hogehoge/'
+
+url_function:
+  children: 'hoge/'
+  classid: 'fuga/'
+  photo: 'poge/jejeje?param='
+
+html_tags:
+  search_key: 'sample_class_tag'
+  top: '<div id="target">'
+  bottom: '<li class="hogehoge">'
+
+children:
+  hii : '111'
+  fuu : '222'
+  mii : '333'
+
+classid:
+  hii_alpha: '2a3f'
+  hii_bata: '4bc2'
+  hii_ganma: 'c211'
+  hii_theata: '981a'
