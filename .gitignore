@@ -2,5 +2,10 @@ conf/*
 data/*
 out/*
 
+*.jpg
+*.jpeg
+*.png
+*.btmp
+
 package-lock.json
 node_modules/*
